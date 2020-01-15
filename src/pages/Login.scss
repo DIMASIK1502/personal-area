@@ -1,0 +1,28 @@
+.login-page {
+  position: relative;
+  background-color: white;
+  border-radius: 10px;
+  padding: 48px;
+  .login-form {
+    padding-left: 32px;
+    max-width: 300px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .form-input {
+      &:not(:last-child) {
+        margin-bottom: 18px;
+      }
+    }
+    .login-btn {
+      margin-top: 8px;
+      margin-bottom: 16px;
+    }
+  }
+  .rs-checkbox-checker {
+    padding-left: 24px;
+  }
+  .rs-checkbox-wrapper {
+    left: 0px;
+  }
+}
