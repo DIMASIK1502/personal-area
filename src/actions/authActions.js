@@ -31,7 +31,7 @@ export function userAuth(user) {
 
   return dispatch =>
     axios
-      .post("http://94.103.84.215:1337/auth/local", {
+      .post("http://94.103.84.215:1337/core/auth", {
         identifier: user.username,
         password: user.password
       })

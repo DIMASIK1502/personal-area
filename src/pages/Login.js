@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, Input, Checkbox, Loader } from "rsuite";
 import { userAuth } from "../actions/authActions";
 import { connect } from "react-redux";
-
+import { withRouter } from "react-router-dom";
 import "./Login.scss";
 
 const Logo = require("../img/logo2.png");
@@ -15,6 +15,13 @@ export class Login extends Component {
   handleBtnClick = async () => {
     const { username, password } = this.state;
     await this.props.userAuth({ username, password });
+    if (this.props.user && this.props.token) {
+      await localStorage.setItem("user", JSON.stringify(this.props.user));
+      await localStorage.setItem("token", this.props.token);
+      this.props.history.push("/profile");
+    } else {
+      console.log("Auth failed");
+    }
     console.log(this.props);
   };
   render() {
@@ -66,4 +73,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps, { userAuth })(Login);
+export default withRouter(connect(mapStateToProps, { userAuth })(Login));

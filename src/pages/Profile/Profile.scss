@@ -1,0 +1,17 @@
+.profile-page {
+  .profile-skin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 16px;
+  }
+  .skin-wrapper {
+    .rs-loader-backdrop {
+      border-radius: 10px;
+    }
+  }
+}
